@@ -6,7 +6,7 @@
         &#8220;First, solve the problem. Then, write the code.&#8221;
         <footer>
           <small>
-            <em>&mdash;John Johnson</em>
+            <em>&mdash;John Johnson 123</em>
           </small>
         </footer>
       </blockquote>
@@ -14,8 +14,11 @@
   </v-row>
 </template>
 
-<script>
-export default {
-  name: 'InspirePage',
+<script lang="ts">
+import { Vue, Component } from "nuxt-property-decorator"
+
+@Component
+export default class InspirePage extends Vue {
+  
 }
 </script>

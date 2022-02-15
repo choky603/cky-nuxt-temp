@@ -1,5 +1,11 @@
 # cky-nuxt-temp
 
+## 참조 
+```bash
+- https://typescript.nuxtjs.org/
+
+```
+
 ## Build Setup
 
 ```bash
