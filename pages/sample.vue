@@ -1,13 +1,12 @@
 <template>
   <v-container>
-    <v-card style="width: 30%" height="100">
-      title : {{title}} sample
-    </v-card>
+    <v-btn color="primary" @click="getData">요청</v-btn>
+    <v-card style="width: 30%" height="100"> title : {{ title }} sample </v-card>
   </v-container>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "nuxt-property-decorator"
+import { Vue, Component } from 'nuxt-property-decorator'
 
 import { SampleModule } from '@/store/modules/sampleMod'
 
@@ -17,8 +16,9 @@ export default class SamplePage extends Vue {
 
   mounted() {
     // alert(`mounted ....`)
-
-    this.getData()
+    // this.$nextTick(function() {
+    // 	this.getData()
+    // })
   }
 
   private async getData() {
