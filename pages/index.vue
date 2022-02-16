@@ -33,7 +33,8 @@
         <v-card-actions>
           <v-spacer />
           <v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
-          <v-btn color="primary" nuxt to="/sample"> go sample </v-btn>
+          <v-btn color="primary" nuxt to="/sample/sample"> go sample </v-btn>
+          <v-btn color="primary" nuxt to="/samplePGY"> go samplePGY </v-btn>
         </v-card-actions>
       </v-card>
     </v-col>
