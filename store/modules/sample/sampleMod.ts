@@ -1,7 +1,7 @@
 import { Module, VuexModule, getModule, Mutation, Action } from 'vuex-module-decorators'
 import Vue from 'vue'
 import { store } from '@/store'
-import { $axios } from '~/utils/api'
+import { $axios } from '@/utils/api'
 
 export interface DataList {
   상품명: string

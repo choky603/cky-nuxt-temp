@@ -17,10 +17,7 @@
     },
     "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node"]
   },
-  "include": [
-    "pages/**/*.vue",
-    "store/**/*.ts"
-],
+  "include": ["pages/**/*.vue", "plugins/**/*.ts", "store/**/*.ts", "utils/**/*.ts"],
   "exclude": ["node_modules", ".nuxt", "dist"],
   "files": ["types/vue-shim.d.ts"]
 }
