@@ -1,31 +1,31 @@
-// import { Module, VuexModule, getModule, Mutation, Action } from 'vuex-module-decorators'
-// import Vue from 'vue'
-// import store from '@/store/index'
+import { Module, VuexModule, getModule, Mutation, Action } from 'vuex-module-decorators'
+import Vue from 'vue'
+import { store } from '@/store'
 
 
-// @Module({ dynamic: true, name: 'sampleModule', namespaced: true, store })
-// class SampleMod extends VuexModule {
-//     sampleData!: string
+@Module({ dynamic: true, name: 'sampleModule', stateFactory: true , namespaced: true, store })
+class Sample extends VuexModule {
+    sampleData!: string
 
-//     get getSampleData(){
-//         return this.sampleData
-//     }
+    get getSampleData(){
+        return this.sampleData
+    }
 
-//     @Mutation
-//     public setDataList(data: string) {
-//         console.log(`@Mutation setDataList`)
-//         if (data) {
-//             console.log(`${data}`)
-//             Vue.set(this, 'postTestData', data)
-//         }
-//     }
+    @Mutation
+    public setTestData(data: string) {
+        console.log(`@Mutation setTestData`)
+        if (data) {
+            console.log(`${data}`)
+            Vue.set(this, 'sampleData', data)
+        }
+    }
 
-//     @Action({ commit: 'setTestData' })
-//     async getTestList() {
-//         console.log(`@Action getTestList`)
-//         return await 'test 12345'
-//     }
+    @Action({ commit: 'setTestData' })
+    async getTestList() {
+        console.log(`@Action getTestList`)
+        return await 'test 12345'
+    }
 
-// }
+}
 
-// export const SampleModule = getModule(SampleMod)
+ export const SampleModule = getModule(Sample)
