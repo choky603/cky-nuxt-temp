@@ -1,7 +1,12 @@
-import Vue from 'vue'
 import Vuex, { Store } from 'vuex'
 
-Vue.use(Vuex)
-
-// export default () => new Store({})
-export const store = new Store({})
+interface RootState {}
+export const store = new Vuex.Store<RootState>({
+  actions: {
+    nuxtServerInit: () => {}
+  }
+})
+const createStore = (): Store<RootState> => {
+  return store
+}
+export default createStore

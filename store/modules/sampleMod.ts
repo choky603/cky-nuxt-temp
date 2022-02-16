@@ -2,28 +2,30 @@ import { Module, VuexModule, getModule, Mutation, Action } from 'vuex-module-dec
 import Vue from 'vue'
 import { store } from '@/store'
 
-@Module({ dynamic: true, name: 'sampleModule', stateFactory: true, namespaced: true, store })
+@Module({ stateFactory: true, name: 'sampleModule', namespaced: true, dynamic: true, store })
 class Sample extends VuexModule {
-    sampleData!: string
+  // State
+  private sampleData!: string
 
-    get getSampleData() {
-        return this.sampleData
-    }
+  // Getter
+  get getSampleData() {
+    return this.sampleData
+  }
 
-    @Mutation
-    public setTestData(data: string) {
-        console.log(`@Mutation setTestData`)
-        if (data) {
-            console.log(`${data}`)
-            Vue.set(this, 'sampleData', data)
-        }
+  @Mutation
+  public setTestData(data: string) {
+    console.log(`@Mutation setTestData`)
+    if (data) {
+      console.log(`${data}`)
+      Vue.set(this, 'sampleData', data)
     }
+  }
 
-    @Action({ commit: 'setTestData' })
-    async getTestList() {
-        console.log(`@Action getTestList`)
-        return await 'test 12345'
-    }
+  @Action({ commit: 'setTestData' })
+  async getTestList() {
+    console.log(`@Action getTestList`)
+    return await `test-${Math.random()}`
+  }
 }
 
 export const SampleModule = getModule(Sample)
