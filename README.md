@@ -9,6 +9,9 @@
 ## Build Setup
 
 ```bash
+# git clone
+$ git clone https://github.com/choky603/cky-nuxt-temp.git
+
 # install dependencies
 $ yarn install
 
