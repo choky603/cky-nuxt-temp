@@ -15,7 +15,6 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 import { DataResponse, SamplePGYModule } from '~/store/modules/sample/samplePGY'
 // import { $axios } from '@/utils/api'
-import { myMixin } from '@/plugins/mixin'
 import NuxtLogo from '@/components/NuxtLogo.vue'
 
 @Component
