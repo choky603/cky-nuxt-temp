@@ -15,7 +15,6 @@
 import { Vue, Component } from 'nuxt-property-decorator'
 import { DataResponse, SamplePGYModule } from '~/store/modules/sample/samplePGY'
 // import { $axios } from '@/utils/api'
-import NuxtLogo from '@/components/NuxtLogo.vue'
 
 @Component
 export default class SamplePGYPage extends Vue {
@@ -39,7 +38,6 @@ export default class SamplePGYPage extends Vue {
     // console.log(3, process.server)
     // this.axiosTest()
     this.axiosTest2()
-    myMixin.openPopup(NuxtLogo)
   }
 
   private async axiosTest() {
