@@ -1,14 +1,14 @@
 <template>
   <v-container>
     <v-card style="width: 30%" height="100">
-        {{data}}
+      {{ data }}
     </v-card>
   </v-container>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "nuxt-property-decorator"
-import { DataResponse, SamplePGYModule } from '@/store/modules/samplePGY'
+import { Vue, Component } from 'nuxt-property-decorator'
+import { DataResponse, SamplePGYModule } from '~/store/modules/sample/samplePGY'
 
 @Component
 export default class SamplePGYPage extends Vue {
