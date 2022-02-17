@@ -15,7 +15,7 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node"]
+    "types": ["@nuxt/types", "@nuxtjs/axios", "@types/node", "vuetify-dialog/types"]
   },
   "include": ["pages/**/*.vue", "plugins/**/*.ts", "store/**/*.ts", "utils/**/*.ts"],
   "exclude": ["node_modules", ".nuxt", "dist"],
