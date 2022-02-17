@@ -5,8 +5,16 @@ let $axios: NuxtAxiosInstance
 // const $axios: NuxtAxiosInstance = {} as NuxtAxiosInstance
 
 export function initializeAxios(axiosInstance: NuxtAxiosInstance) {
+  // axiosInstance.interceptors.request.use(value => {
+  //   value.headers = {
+  //     'Cache-Control': 'no-cache'
+  //   }
+  //   return value
+  // })
+
   // axiosInstance.setHeader('Cache-Control', 'no-cache')
-  // axiosInstance.setHeader('Content-type', 'application/x-www-form-urlencoded; charset=UTF-8')
+  // axiosInstance.setHeader('Content-type', 'application/x-www-form-urlencoded; charset=UTF-8', ['post'])
+
   $axios = axiosInstance
 }
 

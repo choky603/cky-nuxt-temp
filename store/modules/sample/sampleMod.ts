@@ -64,10 +64,6 @@ class Sample extends VuexModule {
       // userName: encodeURIComponent('choky1234!@#$[아이지오]')
       userName: 'choky1234!@#$[아이지오]'
     }
-    // const config: AxiosRequestConfig = {}
-    // const config = {
-    //   headers: { 'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8' }
-    // }
     return await $axios.$post('/sampleCky', paramData)
   }
 }

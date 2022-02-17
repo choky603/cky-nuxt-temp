@@ -52,6 +52,10 @@ export default {
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: process.env.BASE_URL || 'http://localhost:8080'
+    // requestInterceptor: config => {
+    //   config.headers.common['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8'
+    //   return config
+    // }
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
