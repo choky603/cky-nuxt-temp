@@ -3,6 +3,9 @@ import Vue from 'vue'
 import { store } from '@/store'
 import { $axios } from '@/utils/api'
 
+export interface TestRequest {
+  userName: string
+}
 export interface DataList {
   상품명: string
   사업자명: string
@@ -25,9 +28,7 @@ class Sample extends VuexModule {
 
   @Mutation
   public setTestData(data: string) {
-    console.log(`@Mutation setTestData`)
     if (data) {
-      console.log(`${data}`)
       Vue.set(this, 'testData', data)
     }
   }
@@ -38,16 +39,14 @@ class Sample extends VuexModule {
     return await `test-${Math.random()}`
   }
 
-  // Getter
   get getSampleData() {
     return this.sampleData
   }
 
   @Mutation
   setSampleData(data: TestResponse) {
-    console.log(`@Mutation setSampleData`)
-    // console.log(`TestResponse:${JSON.stringify(data)}`)
     if (data) {
+      // console.log(`data:${JSON.stringify(data)}`)
       Vue.set(this, 'sampleData', data)
     }
   }
@@ -56,6 +55,20 @@ class Sample extends VuexModule {
   async getSampleList() {
     console.log(`@Action getSampleList`)
     return await $axios.$post('/test')
+  }
+
+  @Action({ commit: 'setSampleData' })
+  async getParamSampleList() {
+    console.log(`@Action getParamSampleList`)
+    const paramData: TestRequest = {
+      // userName: encodeURIComponent('choky1234!@#$[아이지오]')
+      userName: 'choky1234!@#$[아이지오]'
+    }
+    // const config: AxiosRequestConfig = {}
+    // const config = {
+    //   headers: { 'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8' }
+    // }
+    return await $axios.$post('/sampleCky', paramData)
   }
 }
 
