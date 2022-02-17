@@ -1,16 +1,32 @@
 # cky-nuxt-temp
 
-## 참조 
-```bash
-- https://typescript.nuxtjs.org/
+## Concept
 
-```
+- Typescript 도입을 통해 코드 안정성 및 생상성 증대
+- 엄격한 타입 Rule 도입으로 안정성 확보
+  - strictNullChecks
+  - noImplicitAny
+- Typescript 주요 Feature 적극 사용 권장
+  - Optional Chaining
+  - Nullish Coalescing
+  - Non Null Assertion Operator
+  - Promise.all
+  - ...
+- 클래스 기반 컴포넌트 (Vue Class Component) 를 활용해 Typescript의 많은 기능을 적극 도입
+- Typescript Decorator Pattern 을 통해 읽기 쉬운 코드를 작성하고 코드의 재사용성을 높임
+- async & await 적극적인 사용으로 읽기 쉬운 코드와 기존의 비동기 처리방식 개선
 
 ## Build Setup
 
 ```bash
-# git clone
+# Clone this repo:
 $ git clone https://github.com/choky603/cky-nuxt-temp.git
+
+# verdaccio 설정:
+#TODO 확인 필요
+
+# yarn 설치:
+$ npm install -g yarn
 
 # install dependencies
 $ yarn install
@@ -75,3 +91,10 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+## 참조
+
+```bash
+- https://typescript.nuxtjs.org/
+
+```
