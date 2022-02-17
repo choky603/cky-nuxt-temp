@@ -28,16 +28,12 @@ export default class SamplePage extends Vue {
     return this.sampleList ?? []
   }
 
-  mounted() {
-    // alert(`mounted ....`)
-    // this.$nextTick(function() {
-    this.pageInit()
-    // })
+  asyncData() {
+    console.log(`asyncData.....`)
   }
 
-  private async pageInit() {
-    // console.log(`@Direction:${Direction.Up}`)
-    // console.log(`@SERVER_MOD:${process.env.SERVER_MOD}`)
+  async fetch() {
+    console.log(`fetch.....`)
     try {
       await SampleModule.getTestList()
       this.title = SampleModule.getTestData
@@ -46,10 +42,23 @@ export default class SamplePage extends Vue {
     }
   }
 
+  mounted() {
+    // alert(`mounted ....`)
+    // this.$nextTick(function() {
+    this.pageInit()
+    // })
+  }
+
+  private pageInit() {
+    // console.log(`@Direction:${Direction.Up}`)
+    console.log(`@SERVER_MOD:${process.env.SERVER_MOD}`)
+  }
+
   private async fetchData() {
     try {
       console.log(`start fetchData......`)
       await SampleModule.getSampleList()
+      // await SampleModule.getParamSampleList()
       this.sampleList = SampleModule.getSampleData.data
     } catch (error) {
       console.info(error)

@@ -5,7 +5,23 @@ let $axios: NuxtAxiosInstance
 // const $axios: NuxtAxiosInstance = {} as NuxtAxiosInstance
 
 export function initializeAxios(axiosInstance: NuxtAxiosInstance) {
+  // axiosInstance.setHeader('Cache-Control', 'no-cache')
+  // axiosInstance.setHeader('Content-type', 'application/x-www-form-urlencoded; charset=UTF-8')
   $axios = axiosInstance
 }
+
+// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+// export default function ({ $axios, redirect }) {
+//   $axios.onRequest(config => {
+//     console.log('Making request to ' + config.url) // 요청 때마다 url 출력
+//   })
+
+//   $axios.onError(error => {
+//     const code = parseInt(error.response && error.response.status)
+//     if (code === 400) {
+//       redirect('/400') // 400 에러 발생시 /400으로 리다이렉트
+//     }
+//   })
+// }
 
 export { $axios }
