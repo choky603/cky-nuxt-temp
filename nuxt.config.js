@@ -12,6 +12,18 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
 
+  dotenv: {
+    filename: process.env.NODE_ENV === 'development' ? '.env' : '.env.' + process.env.NODE_ENV
+  },
+  // dotenv: {
+  //   filename: '.env'
+  // },
+
+  env: {
+    BASE_URL: process.env.BASE_URL,
+    SERVER_MOD: process.env.SERVER_MOD
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -38,7 +50,7 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: 'http://localhost:8080'
+    baseURL: process.env.BASE_URL || 'http://localhost:8080'
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify

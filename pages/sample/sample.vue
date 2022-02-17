@@ -16,7 +16,7 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 
-import { Direction } from '@/pages/constant/index' // 상수사용
+// import { Direction } from '@/pages/constant/index' // 상수사용
 import { SampleModule, DataList } from '~/store/modules/sample/sampleMod'
 
 @Component
@@ -36,7 +36,8 @@ export default class SamplePage extends Vue {
   }
 
   private async pageInit() {
-    console.log(`@:${Direction.Up}`)
+    // console.log(`@Direction:${Direction.Up}`)
+    // console.log(`@SERVER_MOD:${process.env.SERVER_MOD}`)
     try {
       await SampleModule.getTestList()
       this.title = SampleModule.getTestData
