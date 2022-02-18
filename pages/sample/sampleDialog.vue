@@ -1,5 +1,6 @@
 <template>
   <v-container>
+    <v-banner elevation="10">Dialog Sample</v-banner>
     <v-btn elevation="2" @click="다이얼로그호출(1)">Open Confirm</v-btn>
     <v-btn elevation="2" @click="다이얼로그호출(2)">Open info</v-btn>
     <v-btn elevation="2" @click="다이얼로그호출(3)">Open warning</v-btn>
@@ -7,12 +8,19 @@
     <br />
     <br />
     <v-btn elevation="2" @click="다이얼로그호출(5)">Open prompt</v-btn>
-    <v-btn elevation="2" @click="다이얼로그호출(6)">Open prompt</v-btn>
+    <v-btn elevation="2" @click="다이얼로그호출(6)">Open notify</v-btn>
+    <br />
+    <br />
+    <v-banner elevation="10">Component Popup Sample</v-banner>
+    <v-btn elevation="2" @click="컴포넌트팝업()">컴포넌트팝업</v-btn>
+    <v-btn elevation="2" @click="콜백컴포넌트팝업()">콜백 컴포넌트팝업</v-btn>
   </v-container>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import simplePopup from '~/pages/sample/samplePopup.vue'
+import simpleCallbackPopup from '~/pages/sample/sampleCallbackPopup.vue'
 
 @Component
 export default class SampleDialog extends Vue {
@@ -59,6 +67,15 @@ export default class SampleDialog extends Vue {
       // after idle 3000 sec - userChoice will be undefined
       this.$dialog.notify.info(userChoice)
     }
+  }
+
+  private 컴포넌트팝업() {
+    this.$dialog.show(simplePopup, { thClass: 'text-left' })
+  }
+
+  private async 콜백컴포넌트팝업() {
+    const res = await this.$dialog.showAndWait(simpleCallbackPopup, { thClass: 'text-left' })
+    console.log('콜백팝업결과', res)
   }
 }
 </script>

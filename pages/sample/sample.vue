@@ -2,8 +2,12 @@
   <v-container>
     <p>{{ title }}</p>
 
-    <v-btn color="primary" @click="fetchData">요청</v-btn>
+    <v-card>
+      <NuxtLink to="/sample/sampleDialog">sample dialog</NuxtLink> ||
+      <v-btn color="primary" @click="movePage(`/sample/sampleDialog`)">이동</v-btn>
+    </v-card>
 
+    <v-btn color="primary" @click="fetchData">요청</v-btn>
     <v-col cols="10">
       <v-card v-for="(item, index) in sampleData" :key="index">
         <v-card-title>{{ item.사업자명 }}</v-card-title>
@@ -14,13 +18,14 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'nuxt-property-decorator'
+import { Component, mixins } from 'nuxt-property-decorator'
+import PageVue from '@/pages/mixins/PageVue.vue'
 
 // import { Direction } from '@/pages/constant/index' // 상수사용
 import { SampleModule, DataList } from '~/store/modules/sample/sampleMod'
 
 @Component
-export default class SamplePage extends Vue {
+export default class SamplePage extends mixins(PageVue) {
   private title = ''
   private sampleList: DataList[] = []
 
@@ -52,6 +57,14 @@ export default class SamplePage extends Vue {
   private pageInit() {
     // console.log(`@Direction:${Direction.Up}`)
     console.log(`@SERVER_MOD:${process.env.SERVER_MOD}`)
+  }
+
+  private movePage(link: string) {
+    console.log(`link:${link}`)
+    this.$router.push(link)
+    // this.$router.replace(link)
+    // this.$router.push({ name: 'sample-sampleDialog', params: { id: 'test-id' } })
+    // this.$router.go(-1) // 한 단계 뒤로
   }
 
   private async fetchData() {
