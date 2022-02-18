@@ -72,7 +72,7 @@ export default {
         {
           icon: 'mdi-plus',
           title: 'Sample',
-          to: '/sample/sample'
+          to: '/sample/SamplePage'
         },
         {
           icon: 'mdi-plus',
